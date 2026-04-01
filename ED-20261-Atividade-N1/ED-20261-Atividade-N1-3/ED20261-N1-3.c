@@ -18,39 +18,39 @@ typedef struct {
 } PilhaHP;
 
 void inicializar(PilhaHP *p) {
-    p->X = p->Y = p->Z = p->T = 0.0;
+    p -> X = p -> Y = p->Z = p -> T = 0.0;
 }
 
 void exibirEstado(PilhaHP *p) {
-    printf("\n[T]: %8.2f", p->T);
-    printf("\n[Z]: %8.2f", p->Z);
-    printf("\n[Y]: %8.2f", p->Y);
-    printf("\n[X]: %8.2f (Display)\n", p->X);
+    printf("\n[T]: %8.2f", p -> T);
+    printf("\n[Z]: %8.2f", p -> Z);
+    printf("\n[Y]: %8.2f", p -> Y);
+    printf("\n[X]: %8.2f (Display)\n", p -> X);
     printf("--------------------------\n");
 }
 
 void push(PilhaHP *p, double valor) {
-    p->T = p->Z;
-    p->Z = p->Y;
-    p->Y = p->X;
-    p->X = valor;
+    p -> T = p -> Z;
+    p -> Z = p -> Y;
+    p -> Y = p -> X;
+    p -> X = valor;
 }
 
 void operar(PilhaHP *p, char op) {
     double resultado = 0;
     
-    if (op == '+') resultado = p->Y + p->X;
-    else if (op == '-') resultado = p->Y - p->X;
-    else if (op == '*') resultado = p->Y * p->X;
+    if (op == '+') resultado = p -> Y + p -> X;
+    else if (op == '-') resultado = p -> Y - p -> X;
+    else if (op == '*') resultado = p -> Y * p -> X;
     else if (op == '/') {
-        if(p->X != 0) resultado = p->Y / p->X;
-        else { printf("\nErro com a divisao"); return; }
+        if(p -> X != 0) resultado = p -> Y / p -> X;
+        else { printf("\nErro com a divisão."); return; }
     }
 
-    p->X = resultado;
-    p->Y = p->Z;
-    p->Z = p->T;
-    p->T = 0; 
+    p -> X = resultado;
+    p -> Y = p -> Z;
+    p -> Z = p -> T;
+    p -> T = 0; 
 }
 
 int main() {
@@ -58,7 +58,7 @@ int main() {
     inicializar(&minhaPilha);
 
     char expressao[100];
-    printf("Digite a expressao RPN (ex: 5 1 2 + 4 * + 3 -): ");
+    printf("Digite a expressão RPN (ex: 5 1 2 + 4 * + 3 -): ");
     fgets(expressao, 100, stdin);
 
     char *token = strtok(expressao, " \n");
@@ -75,6 +75,6 @@ int main() {
         token = strtok(NULL, " \n");
     }
 
-    printf("\nO resultado da expressao algebrica e: %.2f\n", minhaPilha.X);
+    printf("\nO resultado da expressão algébrica e: %.2f\n", minhaPilha.X);
     return 0;
 }
