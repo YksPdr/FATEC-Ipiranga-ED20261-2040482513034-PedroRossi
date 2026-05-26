@@ -1,3 +1,14 @@
+/*                   RA: 2040482513034 - Pedro Rossi Sales Sobrinho                 */
+/*----------------------------------------------------------------------------------*/
+/*                                FATEC - Ipiranga                                  */
+/*                            ADS - Estrutura de Dados                              */
+/*                             ID da Atividade: N2-3                                */
+/*             Objetivo: Consolidação de Competências em Linguagem C                */
+/*                                                                                  */
+/*                       Autor: Pedro Rossi Sales Sobrinho                          */
+/*                                                                  Data:19/05/2026 */
+/*----------------------------------------------------------------------------------*/
+
 #include <stdio.h>
 
 // Variavel global para contar os movimentos
